@@ -384,12 +384,7 @@
 | Écart-type                | 1.40    | 1.26                   | 1.13                   | 1.11                 | 0.96                         | 1.59            |
 
 
-
-    la moyenne,
-    l'écart type,
-    le min,
-    le max,
-    les quartiles.
+### Questions 2 :
 
 ![Texte alternatif de l'image](localhost://Téléchargements/Soutenance_SCR.pdf)
 
