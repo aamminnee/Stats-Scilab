@@ -774,7 +774,154 @@
 
 --> xtitle("Distribution of participants by age");
 
-[lImage 1: ](./EXOS2_QUEST1_A.scg)
+--> effectifs_Gender = compter_effectifs(Gender, unique(Gender))
+
+ effectifs_Gender = [2x2 string]
+
+    "Female"  "353"
+    "Male"    "352"
+
+--> pie(effectifs_gender);
+
+--> legend(effectifs_Gender(:, 1));
+
+--> xtitle("Gender distribution");
+
+[Image 1: ](./EXOS2_QUEST1_A.scg)
+[Image 2: ](./EXOS2_QUEST1_B.scg)
+
+
+### Question 2
+
+
+--> effectifs_country = evstr(effectifs_Country(:, 2));
+
+--> [effectifs_tries, indices] = gsort(effectifs_country, "g", "i");
+
+--> effectifs_tries = effectifs_tries($:-1:1);
+
+--> indices = indices($:-1:1);
+
+--> top_10_effectifs = effectifs_tries(1:10);
+
+--> top_10_pays = effectifs_Country(indices(1:10), 1);
+
+--> top_10_effectifs
+
+ top_10_effectifs = [10x1 double]
+
+    53.
+    40.
+    34.
+    27.
+    27.
+    27.
+    27.
+    27.
+    27.
+    27.
+
+--> top_10_pays
+
+ top_10_pays = [10x1 string]
+
+    "India"      
+    "USA"        
+    "Canada"     
+    "Turkey"     
+    "Switzerland"
+    "Spain"      
+    "Mexico"     
+    "Ireland"    
+    "France"     
+    "Denmark"    
+
+--> clf(); 
+
+--> bar(1:10, top_10_effectifs);
+
+--> xtitle("Top 10 Countries by Frequency");
+
+--> a = gca();
+
+--> a.data_bounds = [0, -10; 11, max(top_10_effectifs)*1.1];
+
+--> for i = 1:10
+  >     xstring(i - 0.3, -5, top_10_pays(i)); 
+  > end
+
+
+[Image 2: ](./EXOS2_QUEST1_B.scg)
+
+
+### Questions 3
+
+
+--> Academic_Level = extraire_colonne(csv2, 4);
+
+--> effectifs_Academics_Level = compter_effectifs(Academic_Level, unique(Academic_Level));
+
+--> y = evstr(effectifs_Academics_Level(:, 2));
+
+--> labels = effectifs_Academics_Level(:, 1); 
+
+--> bar(y); 
+
+--> xtitle("School Level Distribution");
+
+--> a = gca();
+
+--> for i = 1:length(y)
+  >     xstring(i - 0.4, -2, labels(i));
+  > end
+
+
+[Image 2: ](./EXOS2_QUEST1_B.scg)
+
+
+### Questions 4
+
+
+--> TempsRS = extraire_colonne(csv2, 6);
+
+--> TempsRS_num = evstr(TempsRS);
+
+--> clf();
+
+--> histplot(10, TempsRS_num); // 10 classes, adapter si nécessaire
+
+--> xtitle("Average Social Media Usage Time", "Hours per Day", "Number of Users");
+
+
+[Image 2: ](./EXOS2_QUEST1_B.scg)
+
+### Questions 5
+
+
+
+--> reseaux = extraire_colonne(csv2, 7);
+
+--> effectifs_reseaux = compter_effectifs(reseaux, unique(reseaux));
+
+--> y = evstr(effectifs_reseaux(:, 2));
+
+--> [effectifs_tries, indices] = gsort(y, "g");
+
+--> top_10_effectifs = effectifs_tries(1:10);
+
+--> top_10_reseaux = effectifs_reseaux(indices(1:10), 1);
+
+--> clf();
+
+--> bar(1:10, top_10_effectifs);
+
+--> xtitle("Most Used Social Networks");
+
+--> for i = 1:10
+  >     xstring(i - 0.4, -2, top_10_reseaux(i));
+  > end
+
+[Image 2: ](./EXOS2_QUEST1_B.scg)
 
 
 ## EXO 3
