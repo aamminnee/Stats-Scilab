@@ -760,9 +760,21 @@
 | Vietnam          | 1        |
 | Yemen            | 1        |
 
-## EXO 2
+## **EXERCICE 2**
 
+### Question 1
 
+--> Age = extraire_colonne(csv2, 2);
+
+--> effectifs_age = strtod(effectifs_Age(:, 2));
+
+--> pie(effectifs_age)
+
+--> legend(effectifs_Age(:, 1));   
+
+--> xtitle("Distribution of participants by age");
+
+[lImage 1: ](./EXOS2_QUEST1_A.scg)
 
 
 ## EXO 3
