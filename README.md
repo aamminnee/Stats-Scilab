@@ -386,8 +386,379 @@
 
 ### Questions 2 :
 
-![Texte alternatif de l'image](localhost://Téléchargements/Soutenance_SCR.pdf)
+--> csv2 = mgetl("data.csv", -1);
 
+--> exec('extraire_colonne.sci', -1);
+
+--> Gender = extraire_colonne(csv2, 3);
+
+--> Male = sum(Gender == "Male");
+
+--> Female = sum(Gender == "Female");
+
+--> Academic_Level = extraire_colonne(csv2, 4);
+
+--> Academic_non_doublon = unique(Academic_Level);
+
+--> Graduate = sum(Academic_Level == "Graduate");
+
+--> High_School = sum(Academic_Level == "High School");
+
+--> Undergraduate = sum(Academic_Level == "Undergraduate");
+
+--> exec('effectifs.sci', -1);
+
+--> effectifs_Country = compter_effectifs(Country, unique(Country));
+
+--> effectifs_Most_Used_Platform = compter_effectifs(Most_Used_Platform, unique(Most_Used_Platform));
+
+--> Affects_Academic_Performance= extraire_colonne(csv2, 8);
+
+--> effectif_Affects_Academic_Performance = compter_effectifs(Affects_Academic_Performance, unique(Affects_Academic_Performance));
+
+--> Relationship_Status = extraire_colonne(csv2, 11);
+
+--> effectifs_Relationship_Status = compter_effectifs(Relationship_Status, unique(Relationship_Status));
+
+--> effectif_Affects_Academic_Performance
+
+--> Male
+
+ Male = 
+
+    352.
+
+--> Female
+
+ Female = 
+
+    353.
+
+--> Academic_non_doublon
+
+ Academic_non_doublon = [3x1 string]
+
+    "Graduate"     
+    "High School"  
+    "Undergraduate"
+
+--> Graduate
+
+ Graduate = 
+
+    325.
+
+--> High_School
+
+ High_School = 
+
+    27.
+
+--> Undergraduate
+
+ Undergraduate = 
+
+    353.
+
+--> effectifs_Country
+
+ effectifs_Country = [110x2 string]
+
+    "Afghanistan"      "1" 
+    "Albania"          "1" 
+    "Andorra"          "1" 
+    "Argentina"        "1" 
+    "Armenia"          "1" 
+    "Australia"        "14"
+    "Austria"          "1" 
+    "Azerbaijan"       "1" 
+    "Bahamas"          "1" 
+    "Bahrain"          "1" 
+    "Bangladesh"       "20"
+    "Belarus"          "1" 
+    "Belgium"          "1" 
+    "Bhutan"           "1" 
+    "Bolivia"          "1" 
+    "Bosnia"           "1" 
+    "Brazil"           "8" 
+    "Bulgaria"         "1" 
+    "Canada"           "34"
+    "Chile"            "1" 
+    "China"            "16"
+    "Colombia"         "1" 
+    "Costa Rica"       "1" 
+    "Croatia"          "1" 
+    "Cyprus"           "1" 
+    "Czech Republic"   "1" 
+    "Denmark"          "27"
+    "Ecuador"          "1" 
+    "Egypt"            "1" 
+    "Estonia"          "1" 
+    "Finland"          "8" 
+    "France"           "27"
+    "Georgia"          "1" 
+    "Germany"          "14"
+    "Ghana"            "1" 
+    "Greece"           "1" 
+    "Hong Kong"        "1" 
+    "Hungary"          "1" 
+    "Iceland"          "1" 
+    "India"            "53"
+    "Indonesia"        "1" 
+    "Iraq"             "1" 
+    "Ireland"          "27"
+    "Israel"           "1" 
+    "Italy"            "21"
+    "Jamaica"          "1" 
+    "Japan"            "21"
+    "Jordan"           "1" 
+    "Kazakhstan"       "1" 
+    "Kenya"            "1" 
+    "Kosovo"           "1" 
+    "Kuwait"           "1" 
+    "Kyrgyzstan"       "1" 
+    "Latvia"           "1" 
+    "Lebanon"          "1" 
+    "Liechtenstein"    "1" 
+    "Lithuania"        "1" 
+    "Luxembourg"       "1" 
+    "Malaysia"         "8" 
+    "Maldives"         "19"
+    "Malta"            "1" 
+    "Mexico"           "27"
+    "Moldova"          "1" 
+    "Monaco"           "1" 
+    "Montenegro"       "1" 
+    "Morocco"          "1" 
+    "Nepal"            "19"
+    "Netherlands"      "8" 
+    "New Zealand"      "8" 
+    "Nigeria"          "1" 
+    "North Macedonia"  "1" 
+    "Norway"           "1" 
+    "Oman"             "1" 
+    "Pakistan"         "19"
+    "Panama"           "1" 
+    "Paraguay"         "1" 
+    "Peru"             "1" 
+    "Philippines"      "1" 
+    "Poland"           "16"
+    "Portugal"         "1" 
+    "Qatar"            "1" 
+    "Romania"          "1" 
+    "Russia"           "21"
+    "San Marino"       "1" 
+    "Serbia"           "1" 
+    "Singapore"        "8" 
+    "Slovakia"         "1" 
+    "Slovenia"         "1" 
+    "South Africa"     "1" 
+    "South Korea"      "13"
+    "Spain"            "27"
+    "Sri Lanka"        "19"
+    "Sweden"           "1" 
+    "Switzerland"      "27"
+    "Syria"            "1" 
+    "Taiwan"           "1" 
+    "Tajikistan"       "1" 
+    "Thailand"         "1" 
+    "Trinidad"         "1" 
+    "Turkey"           "27"
+    "UAE"              "8" 
+    "UK"               "22"
+    "USA"              "40"
+    "Ukraine"          "1" 
+    "Uruguay"          "1" 
+    "Uzbekistan"       "1" 
+    "Vatican City"     "1" 
+    "Venezuela"        "1" 
+    "Vietnam"          "1" 
+    "Yemen"            "1" 
+
+--> effectifs_Most_Used_Platform
+
+ effectifs_Most_Used_Platform = [12x2 string]
+
+    "Facebook"   "123"
+    "Instagram"  "249"
+    "KakaoTalk"  "12" 
+    "LINE"       "12" 
+    "LinkedIn"   "21" 
+    "Snapchat"   "13" 
+    "TikTok"     "154"
+    "Twitter"    "30" 
+    "VKontakte"  "12" 
+    "WeChat"     "15" 
+    "WhatsApp"   "54" 
+    "YouTube"    "10" 
+
+ effectif_Affects_Academic_Performance = [2x2 string]
+
+    "No"   "252"
+    "Yes"  "453"
+
+--> effectifs_Relationship_Status
+
+ effectifs_Relationship_Status = [3x2 string]
+
+    "Complicated"      "32" 
+    "In Relationship"  "289"
+    "Single"           "384"
+
+| Sexe   | Effectif |
+|--------|----------|
+| Male   | 352      |
+| Female | 353      |
+
+
+| Niveau académique | Effectif |
+|-------------------|----------|
+| Graduate          | 325      |
+| High School       | 27       |
+| Undergraduate     | 353      |
+
+
+| Statut relationnel  | Effectif |
+|---------------------|----------|
+| Single              | 384      |
+| In Relationship     | 289      |
+| Complicated         | 32       |
+
+
+| Affects Academic Performance | Effectif |
+|-----------------------------|----------|
+| Yes                         | 453      |
+| No                          | 252      |
+
+
+| Plateforme    | Effectif |
+|---------------|----------|
+| Instagram     | 249      |
+| TikTok        | 154      |
+| Facebook      | 123      |
+| WhatsApp      | 54       |
+| Twitter       | 30       |
+| LinkedIn      | 21       |
+| WeChat        | 15       |
+| Snapchat      | 13       |
+| KakaoTalk     | 12       |
+| LINE          | 12       |
+| VKontakte     | 12       |
+| YouTube       | 10       |
+
+
+| Pays             | Effectif |
+|------------------|----------|
+| Afghanistan      | 1        |
+| Albania          | 1        |
+| Andorra          | 1        |
+| Argentina        | 1        |
+| Armenia          | 1        |
+| Australia        | 14       |
+| Austria          | 1        |
+| Azerbaijan       | 1        |
+| Bahamas          | 1        |
+| Bahrain          | 1        |
+| Bangladesh       | 20       |
+| Belarus          | 1        |
+| Belgium          | 1        |
+| Bhutan           | 1        |
+| Bolivia          | 1        |
+| Bosnia           | 1        |
+| Brazil           | 8        |
+| Bulgaria         | 1        |
+| Canada           | 34       |
+| Chile            | 1        |
+| China            | 16       |
+| Colombia         | 1        |
+| Costa Rica       | 1        |
+| Croatia          | 1        |
+| Cyprus           | 1        |
+| Czech Republic   | 1        |
+| Denmark          | 27       |
+| Ecuador          | 1        |
+| Egypt            | 1        |
+| Estonia          | 1        |
+| Finland          | 8        |
+| France           | 27       |
+| Georgia          | 1        |
+| Germany          | 14       |
+| Ghana            | 1        |
+| Greece           | 1        |
+| Hong Kong        | 1        |
+| Hungary          | 1        |
+| Iceland          | 1        |
+| India            | 53       |
+| Indonesia        | 1        |
+| Iraq             | 1        |
+| Ireland          | 27       |
+| Israel           | 1        |
+| Italy            | 21       |
+| Jamaica          | 1        |
+| Japan            | 21       |
+| Jordan           | 1        |
+| Kazakhstan       | 1        |
+| Kenya            | 1        |
+| Kosovo           | 1        |
+| Kuwait           | 1        |
+| Kyrgyzstan       | 1        |
+| Latvia           | 1        |
+| Lebanon          | 1        |
+| Liechtenstein    | 1        |
+| Lithuania        | 1        |
+| Luxembourg       | 1        |
+| Malaysia         | 8        |
+| Maldives         | 19       |
+| Malta            | 1        |
+| Mexico           | 27       |
+| Moldova          | 1        |
+| Monaco           | 1        |
+| Montenegro       | 1        |
+| Morocco          | 1        |
+| Nepal            | 19       |
+| Netherlands      | 8        |
+| New Zealand      | 8        |
+| Nigeria          | 1        |
+| North Macedonia  | 1        |
+| Norway           | 1        |
+| Oman             | 1        |
+| Pakistan         | 19       |
+| Panama           | 1        |
+| Paraguay         | 1        |
+| Peru             | 1        |
+| Philippines      | 1        |
+| Poland           | 16       |
+| Portugal         | 1        |
+| Qatar            | 1        |
+| Romania          | 1        |
+| Russia           | 21       |
+| San Marino       | 1        |
+| Serbia           | 1        |
+| Singapore        | 8        |
+| Slovakia         | 1        |
+| Slovenia         | 1        |
+| South Africa     | 1        |
+| South Korea      | 13       |
+| Spain            | 27       |
+| Sri Lanka        | 19       |
+| Sweden           | 1        |
+| Switzerland      | 27       |
+| Syria            | 1        |
+| Taiwan           | 1        |
+| Tajikistan       | 1        |
+| Thailand         | 1        |
+| Trinidad         | 1        |
+| Turkey           | 27       |
+| UAE              | 8        |
+| UK               | 22       |
+| USA              | 40       |
+| Ukraine          | 1        |
+| Uruguay          | 1        |
+| Uzbekistan       | 1        |
+| Vatican City     | 1        |
+| Venezuela        | 1        |
+| Vietnam          | 1        |
+| Yemen            | 1        |
 
 ## EXO 2
 
@@ -411,5 +782,5 @@
 ## EXO 6
 
 
-
+![Texte alternatif de l'image](localhost://Téléchargements/Soutenance_SCR.pdf)
 ## EXO 7
