@@ -886,8 +886,6 @@
 
 --> TempsRS_num = evstr(TempsRS);
 
---> clf();
-
 --> histplot(10, TempsRS_num); // 10 classes, adapter si nécessaire
 
 --> xtitle("Average Social Media Usage Time", "Hours per Day", "Number of Users");
@@ -911,8 +909,6 @@
 
 --> top_10_reseaux = effectifs_reseaux(indices(1:10), 1);
 
---> clf();
-
 --> bar(1:10, top_10_effectifs);
 
 --> xtitle("Most Used Social Networks");
@@ -924,14 +920,188 @@
 [Image 2: ](./EXOS2_QUEST1_B.scg)
 
 
-## EXO 3
+## EXERCICE 3
 
 
+### Questions 1
+
+
+--> exec("box.sci");
+
+--> csv2 = mgetl("data.csv", -1);
+
+--> exec("extraire_colonne.sci");
+
+--> ages_str = extraire_colonne(csv2, 2);
+
+--> usage_str = extraire_colonne(csv2, 6);
+
+--> ages = evstr(ages_str);
+
+--> usage = evstr(usage_str);
+
+--> groupe1 = usage(ages >= 16 & ages <= 20);
+
+--> groupe2 = usage(ages >= 21 & ages <= 25);
+
+--> box_simple(groupe1, 1);
+
+--> box_simple(groupe2, 2);
+
+--> xtitle("Average Daily Social Media Usage by Age Group (hours)");
+
+--> xstring(0.85, -0.5, "16-20");
+
+--> xstring(1.85, -0.5, "21-25");
+
+--> a = gca();
+
+--> a.data_bounds = [0 -1; 3 max([groupe1; groupe2]) + 1];
+
+
+[Image 2: ](./EXOS2_QUEST1_B.scg)
+
+
+### Questions 2
+
+
+--> exec("box.sci");
+
+--> csv2 = mgetl("data.csv", -1);
+
+--> exec("extraire_colonne.sci");
+
+--> genres = extraire_colonne(csv2, 3); 
+
+--> usages = evstr(extraire_colonne(csv2, 6)); 
+
+--> groupe_h = usages(find(genres == "Male"));
+
+--> groupe_f = usages(find(genres == "Female"));
+
+--> box_simple(groupe_h, 1);
+
+--> box_simple(groupe_f, 2);
+
+--> xtitle("Avg Daily Social Media Usage by Gender (hours)");
+
+--> xstring(0.8, -0.5, "Male");
+
+--> xstring(1.8, -0.5, "Female");
+
+--> a = gca();
+
+--> a.data_bounds = [0 -1; 3 max([groupe_h; groupe_f]) + 1];
+
+
+[Image 2: ](./EXOS2_QUEST1_B.scg)
+
+
+### Questions 3
+
+
+--> csv2 = mgetl("data.csv", -1);
+
+--> exec("extraire_colonne.sci");
+
+--> exec("box.sci");
+
+--> niveaux = extraire_colonne(csv2, 4);  
+
+--> scores = evstr(extraire_colonne(csv2, 13));
+
+--> niveaux_uniques = unique(niveaux);
+
+--> nb_niveaux = size(niveaux_uniques, 1); 
+
+--> for i = 1:nb_niveaux
+  >     idx = [];
+  >     for j = 1:size(niveaux,1)
+  >         if strcmp(niveaux(j,:), niveaux_uniques(i,:)) then
+  >             idx = [idx; j];
+  >         end
+  >     end
+  >     
+  >     scores_groupe = scores(idx);
+  >     if length(scores_groupe) > 0 then
+  >         box_simple(scores_groupe, i);
+  >     end
+  > end
+
+--> xtitle("Addicted Score by Academic Level");
+
+--> for i = 1:nb_niveaux
+  >     xstring(i - 0.3, -1, niveaux_uniques(i,:));
+  > end
+
+--> a = gca();
+
+--> a.data_bounds = [0 -2; nb_niveaux + 1 max(scores) + 2];
+
+
+[Image 2: ](./EXOS2_QUEST1_B.scg)
 
 
 ## EXO 4
 
 
+exec("extraire_colonne.sci", -1);
+
+fd = mopen("data.csv", "rt");
+lines = mgetl(fd, -1);
+mclose(fd);
+
+col_hours_str = extraire_colonne(lines, 6);
+col_affects = extraire_colonne(lines, 8);  
+
+n = size(col_hours_str, "*");
+col_hours = zeros(n, 1);
+for i = 1:n
+    col_hours(i) = evstr(col_hours_str(i));
+end
+
+labels = ["Low (0-2h)", "Moderate (2-4h)", "High (4-6h)", "Very High (6-12h)"];
+total = zeros(1, 4);
+yes = zeros(1, 4);
+
+for i = 1:n
+    h = col_hours(i);
+    a = col_affects(i);
+
+    if h >= 0 & h < 2 then
+        idx = 1;
+    elseif h >= 2 & h < 4 then
+        idx = 2;
+    elseif h >= 4 & h < 6 then
+        idx = 3;
+    elseif h >= 6 & h <= 12 then
+        idx = 4;
+    else
+        continue;
+    end
+
+    total(idx) = total(idx) + 1;
+    if a == "Yes" then
+        yes(idx) = yes(idx) + 1;
+    end
+end
+
+percent = (yes ./ total) * 100;
+
+bar(percent);
+xtitle("Impact of Social Media Usage on Academic Performance", "", "Percentage of Students Affected (%)");
+
+
+positions = 1:length(percent);
+if length(positions) <> size(labels, "*") then
+    error("Number of labels does not match number of bars.");
+end
+
+ax = gca();
+ax.x_ticks = tlist(["ticks", "locations", "labels"], 1:4, labels);
+
+
+[Image 2: ](./EXOS2_QUEST1_B.scg)
 
 
 ## EXO 5
