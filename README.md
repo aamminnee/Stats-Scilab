@@ -386,7 +386,7 @@ for i = 1:10
 end
 
 
-[Image 3: ](./images/ex2B)
+[Image 3: ](./images/ex2B.png)
 
 
 ### Questions 3
@@ -411,7 +411,7 @@ for i = 1:length(y)
 end
 
 
-[Image 4: ](./images/ex2C)
+[Image 4: ](./images/ex2C.png)
 
 
 ### Questions 4
@@ -426,7 +426,7 @@ histplot(10, TempsRS_num);
 xtitle("Average Social Media Usage Time", "Hours per Day", "Number of Users");
 
 
-[Image 5: ](./images/ex2D)
+[Image 5: ](./images/ex2D.png)
 
 
 ### Questions 5
@@ -452,7 +452,7 @@ for i = 1:10
   end
 
 
-[Image 6: ](./images/ex2E)
+[Image 6: ](./images/ex2E.png)
 
 
 ## EXERCICE 3
@@ -493,7 +493,7 @@ a = gca();
 a.data_bounds = [0 -1; 3 max([groupe1; groupe2]) + 1];
 
 
-[Image 7: ](./images/ex3A)
+[Image 7: ](./images/ex3A.png)
 
 
 ### Questions 2
@@ -528,7 +528,7 @@ a = gca();
 a.data_bounds = [0 -1; 3 max([groupe_h; groupe_f]) + 1];
 
 
-[Image 8: ](./images/ex3B)
+[Image 8: ](./images/ex3B.png)
 
 
 ### Questions 3
@@ -570,7 +570,7 @@ a = gca();
 a.data_bounds = [0 -2; nb_niveaux + 1 max(scores) + 2];
 
 
-[Image 9: ](./images/ex3C)
+[Image 9: ](./images/ex3C.png)
 
 
 ## EXO 4
@@ -640,7 +640,7 @@ ax = gca();
 ax.x_ticks = tlist(["ticks", "locations", "labels"], 1:4, labels);
 
 
-[Image 10: ](./images/ex4)
+[Image 10: ](./images/ex4.png)
 
 
 ## EXO 5
@@ -675,7 +675,7 @@ xtitle("Score d addiction en fonction de la qualité de sommeil", "Groupe", "Sco
 legend(["Min", "Moyenne", "Max"], "in_upper_right");
 
 
-[Image 11: ](./images/ex5)
+[Image 11: ](./images/ex5.png)
 
 
 ## EXO 6
@@ -741,7 +741,7 @@ xtitle("Heures de sommeil vs Temps d utilisation des réseaux sociaux", ...
 legend(["Femmes", "Hommes"]);
 
 
-[Image 12 : ](./images/ex6)
+[Image 12 : ](./images/ex6.png)
 
 
 ### Questions 2
@@ -874,7 +874,4 @@ Cependant, YouTube a créé une fonctionnalité appelée Shorts qui permet égal
 Il ne nous a fallu que peu de temps pour réaliser cette comparaison, que nous trouvons intéressante, car elle fait partie intégrante de notre vie actuelle. Nous sommes d’ailleurs directement concernés en tant qu’utilisateurs.
 
 
-[Image 13: ](./images/ex7)
-
-
-[Image 2 : ](./EXOS7.scg)
+[Image 13: ](./images/ex7.png)
