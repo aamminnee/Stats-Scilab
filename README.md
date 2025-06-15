@@ -1113,3 +1113,49 @@ ax.x_ticks = tlist(["ticks", "locations", "labels"], 1:4, labels);
 
 ![Texte alternatif de l'image](localhost://Téléchargements/Soutenance_SCR.pdf)
 ## EXO 7
+
+mclose('all');
+fd = mopen("data.csv", "rt");
+lignes = mgetl(fd, -1);
+mclose(fd);
+
+function col = extraire_colonne(lignes, n_col)
+    col = []; 
+    if typeof(n_col)== "string" then 
+        entete = strsplit(ligne(1),",");
+        index = find(entete == n_col);
+        if index == [] then
+            error("Nom de colonne non trouvé : " + n_col);
+        end
+
+        n_col = index(1); 
+    end
+    for i = 2:size(lignes, "r")
+        colonnes = strsplit(lignes(i), ",");
+        col = [col; colonnes(n_col)]; 
+    end
+endfunction
+
+
+col_platform = extraire_colonne(lignes, 7);
+
+n_tiktok = 0;
+n_youtube = 0;
+for i = 1:size(col_platform, "r")
+    p = stripblanks(col_platform(i));
+
+    if p == "TikTok" then
+        n_tiktok = n_tiktok + 1;
+    elseif p == "YouTube" then
+        n_youtube = n_youtube + 1;
+    end
+end
+
+bar([n_tiktok, n_youtube]);
+xtitle("Nombre utilisateurs TikTok vs YouTube", "", "Utilisateurs");
+a = gca(); 
+labels = ["TikTok", "YouTube"];
+positions = [1 2];
+a.x_ticks = tlist(["ticks", "location", "labels"], positions, labels);
+
+![Exo7](C:\Users\UTILISATEUR\Desktop\Sae Maths\Exo7SaeMaths.png)
