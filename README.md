@@ -452,7 +452,7 @@ for i = 1:10
   end
 
 
-[Image 6: ](./images/ex2E.png)
+[Image 6: ](./images/Exo2Q5.png)
 
 
 ## EXERCICE 3
