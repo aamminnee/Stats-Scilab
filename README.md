@@ -352,7 +352,7 @@ legend(effectifs_Gender(:, 1));
 xtitle("Gender distribution");
 
 
-[Image 1: ](./EXOS2_QUEST1_A.scg)
+[Image 1: ](./EXOS2_QUEST1_A.png)
 
 
 [Image 2: ](./EXOS2_QUEST1_B.scg)
