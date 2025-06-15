@@ -1158,4 +1158,4 @@ labels = ["TikTok", "YouTube"];
 positions = [1 2];
 a.x_ticks = tlist(["ticks", "location", "labels"], positions, labels);
 
-![Exo7](C:\Users\UTILISATEUR\Desktop\Sae Maths\Exo7SaeMaths.png)
+[Image 2 : ](./EXOS7.scg)
