@@ -865,8 +865,13 @@ positions = [1 2];
 a.x_ticks = tlist(["ticks", "location", "labels"], positions, labels);
 
 Explications : 
-      De nos jours presque l'entierté de l'humanité utilise les réseaux sociaux. De le contexte de la SAE, le fichier data.csv nous montre une séléction de personnes agés de 18 à 25, hors nous même nous sommes dans cette tranche d'age. Il nous questionne donc de savoir quel réseau social les utilisateurs préfèrent-ils. Ainsi nous avons réalisé ce diagramme qui montre à quel point les gens préfère TikTok à Youtube. Une explication de cette différence s'impose. Depuis plusieurs années, une tendance apparait, les gens n'ont plus beaucoup de temps ou ils aiment regarder quelque chose qui est rapide, donc les gens préfèrent regarder des vidéos courtes (quelques secondes) comme nous pouvons le faire sur TikTok plutôt que des vidéos longues (concepte de Youtube). Cependant Youtube à créé une fonctionnalité "Short" qui permet de regarder des vidéos courtes. Ainsi, il est possible que dans plusieurs années, l'équilibre entre ce graphique se rétablisse. 
-      Il nous a fallut peu de temps pour trouver à faire cette comparaison et nous la trouvons intérressante car elle fait partie de notre vie actuelle et nous somme un acteur principal touché par cette dernière.  
+      De nos jours, presque l’entièreté de l’humanité utilise les réseaux sociaux. Dans le contexte de la SAE, le fichier data.csv nous montre une sélection de personnes âgées de 18 à 25 ans. Or, nous-mêmes faisons partie de cette tranche d’âge. Cela nous amène donc à nous interroger : quel réseau social les utilisateurs préfèrent-ils ?
+
+Ainsi, nous avons réalisé ce diagramme qui montre à quel point les gens préfèrent TikTok à YouTube. Une explication de cette différence s’impose. Depuis plusieurs années, une tendance se dessine : les gens ont de moins en moins de temps ou préfèrent consommer du contenu rapide. Ils privilégient donc les vidéos courtes (quelques secondes), comme celles proposées sur TikTok, plutôt que les vidéos longues (concept de YouTube).
+
+Cependant, YouTube a créé une fonctionnalité appelée Shorts qui permet également de regarder des vidéos courtes. Il est donc possible que, dans quelques années, l’équilibre représenté dans ce graphique se rétablisse.
+
+Il ne nous a fallu que peu de temps pour réaliser cette comparaison, que nous trouvons intéressante, car elle fait partie intégrante de notre vie actuelle. Nous sommes d’ailleurs directement concernés en tant qu’utilisateurs.
 
 
 [Image 2 : ](./EXOS7.scg)
